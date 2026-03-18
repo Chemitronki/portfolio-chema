@@ -20,11 +20,11 @@
             <span class="level-badge">LVL 34</span>
         </div>
         <ul class="nav-menu">
-            <li><a href="#home" class="nav-link active">INICIO</a></li>
-            <li><a href="#about" class="nav-link">SOBRE MÍ</a></li>
-            <li><a href="#projects" class="nav-link">MISIONES</a></li>
-            <li><a href="#skills" class="nav-link">SKILLS</a></li>
-            <li><a href="#contact" class="nav-link">CONTACTO</a></li>
+            <li><a href="#home" class="nav-link active" data-i18n="nav.home">INICIO</a></li>
+            <li><a href="#about" class="nav-link" data-i18n="nav.about">SOBRE MÍ</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav.projects">MISIONES</a></li>
+            <li><a href="#skills" class="nav-link" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACTO</a></li>
         </ul>
         <div class="nav-hp">
             <span class="hp-label">HP</span>
@@ -32,6 +32,10 @@
                 <div class="hp-fill"></div>
             </div>
         </div>
+        <button class="lang-toggle" id="lang-toggle">
+            <span class="lang-flag">🇬🇧</span>
+            <span class="lang-text">EN</span>
+        </button>
     </nav>
 
     <main>
@@ -54,31 +58,31 @@
                     <span class="typing-text"></span><span class="cursor">|</span>
                 </div>
                 <div class="hero-tags">
-                    <span class="tag">DESARROLLADOR WEB</span>
-                    <span class="tag">UX/UI DESIGNER</span>
-                    <span class="tag">FULL STACK</span>
+                    <span class="tag" data-i18n="hero.tag1">DESARROLLADOR WEB</span>
+                    <span class="tag" data-i18n="hero.tag2">UX/UI DESIGNER</span>
+                    <span class="tag" data-i18n="hero.tag3">FULL STACK</span>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-value">34</span>
-                        <span class="stat-label">AÑOS</span>
+                        <span class="stat-label" data-i18n="hero.age">AÑOS</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value">10</span>
-                        <span class="stat-label">PROYECTOS</span>
+                        <span class="stat-label" data-i18n="hero.projects">PROYECTOS</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value">DAW</span>
-                        <span class="stat-label">TÍTULO</span>
+                        <span class="stat-label" data-i18n="hero.title">TÍTULO</span>
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">VER MISIONES</a>
-                    <a href="#contact" class="btn btn-secondary">CONTACTAR</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.missions">VER MISIONES</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">CONTACTAR</a>
                 </div>
             </div>
             <div class="scroll-indicator">
-                <span>SCROLL</span>
+                <span data-i18n="hero.scroll">SCROLL</span>
                 <div class="scroll-arrow"></div>
             </div>
         </section>
@@ -86,27 +90,27 @@
         <section id="about" class="about-section">
             <div class="section-header">
                 <span class="section-number">01</span>
-                <h2 class="section-title">SOBRE MÍ</h2>
+                <h2 class="section-title" data-i18n="about.title">SOBRE MÍ</h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-content">
                 <div class="about-card character-card">
                     <div class="card-header">
                         <span class="card-icon">⚔️</span>
-                        <h3>PERSONAJE</h3>
+                        <h3 data-i18n="about.character">PERSONAJE</h3>
                     </div>
                     <div class="card-body">
-                        <p>¡Hola! Soy <strong>Jose Manuel García Seno</strong>, conocido como <span class="highlight">Chema</span>. Soy desarrollador web y diseñador UX/UI con alma de gamer.</p>
-                        <p>Actualmente trabajo como desarrollador web en <strong>Gesyfar</strong>, gestionando proyectos e-commerce con PrestaShop, PHP y MySQL. Antes fui UX/UI Designer en <strong>Wiper Gaming</strong> y cuento con formación en desarrollo web y diseño de interfaces.</p>
-                        <p>Mi pasión por los videojuegos se refleja en todo lo que creo: interfaces inmersivas, animaciones fluidas y experiencias que parecen sacadas de un juego.</p>
+                        <p data-i18n="about.p1">¡Hola! Soy <strong>Jose Manuel García Seno</strong>, conocido como <span class="highlight">Chema</span>. Soy desarrollador web y diseñador UX/UI con alma de gamer.</p>
+                        <p data-i18n="about.p2">Actualmente trabajo como desarrollador web en <strong>Gesyfar</strong>, gestionando proyectos e-commerce con PrestaShop, PHP y MySQL. Antes fui UX/UI Designer en <strong>Wiper Gaming</strong> y cuento con formación en desarrollo web y diseño de interfaces.</p>
+                        <p data-i18n="about.p3">Mi pasión por los videojuegos se refleja en todo lo que creo: interfaces inmersivas, animaciones fluidas y experiencias que parecen sacadas de un juego.</p>
                     </div>
                     <div class="card-stats">
                         <div class="mini-stat">
-                            <span class="mini-stat-label">CLASE</span>
+                            <span class="mini-stat-label" data-i18n="about.class">CLASE</span>
                             <span class="mini-stat-value">DEV/UI</span>
                         </div>
                         <div class="mini-stat">
-                            <span class="mini-stat-label">ESPECIALIDAD</span>
+                            <span class="mini-stat-label" data-i18n="about.specialty">ESPECIALIDAD</span>
                             <span class="mini-stat-value">FULL STACK</span>
                         </div>
                     </div>
@@ -114,29 +118,29 @@
                 <div class="about-card inventory-card">
                     <div class="card-header">
                         <span class="card-icon">🎒</span>
-                        <h3>INVENTARIO</h3>
+                        <h3 data-i18n="about.inventory">INVENTARIO</h3>
                     </div>
                     <div class="card-body">
                         <ul class="inventory-list">
                             <li>
                                 <span class="item-icon">📍</span>
-                                <span>Madrid, España</span>
+                                <span data-i18n="about.location">Madrid, España</span>
                             </li>
                             <li>
                                 <span class="item-icon">💼</span>
-                                <span>Desarrollador Web en Gesyfar</span>
+                                <span data-i18n="about.job">Desarrollador Web en Gesyfar</span>
                             </li>
                             <li>
                                 <span class="item-icon">🎓</span>
-                                <span>FP DAW - IES Vista Alegre</span>
+                                <span data-i18n="about.education">FP DAW - IES Vista Alegre</span>
                             </li>
                             <li>
                                 <span class="item-icon">🎮</span>
-                                <span>Gamer & Game Dev</span>
+                                <span data-i18n="about.hobby">Gamer & Game Dev</span>
                             </li>
                             <li>
                                 <span class="item-icon">📺</span>
-                                <span>Grado Comunicación Audiovisual</span>
+                                <span data-i18n="about.degree">Grado Comunicación Audiovisual</span>
                             </li>
                         </ul>
                     </div>
@@ -147,12 +151,12 @@
         <section id="projects" class="projects-section">
             <div class="section-header">
                 <span class="section-number">02</span>
-                <h2 class="section-title">MIS MISIONES</h2>
+                <h2 class="section-title" data-i18n="projects.title">MIS MISIONES</h2>
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
                 <article class="project-card featured" data-project="lovecraftian">
-                    <div class="project-badge">DESTACADO</div>
+                    <div class="project-badge" data-i18n="projects.featured">DESTACADO</div>
                     <div class="project-visual">
                         <div class="project-preview lovecraftian-preview">
                             <div class="tentacle t1"></div>
@@ -171,11 +175,11 @@
                         </div>
                         <div class="project-links">
                             <a href="https://lovecraftianescaperoom.vercel.app" target="_blank" class="project-link">
-                                <span>JUGAR</span>
+                                <span data-i18n="projects.play">JUGAR</span>
                                 <span class="link-arrow">→</span>
                             </a>
                             <a href="https://github.com/Chemitronki/Lovecraftian-Escape-Room" target="_blank" class="project-link">
-                                <span>CÓDIGO</span>
+                                <span data-i18n="projects.code">CÓDIGO</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -200,7 +204,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Chemitronki/mitologia-nordica" target="_blank" class="project-link">
-                                <span>VER</span>
+                                <span data-i18n="projects.view">VER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -223,7 +227,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://www.physiocaremadrid.com/" target="_blank" class="project-link">
-                                <span>VER</span>
+                                <span data-i18n="projects.view">VER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -245,7 +249,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://spainleague2k.framer.website/" target="_blank" class="project-link">
-                                <span>VER</span>
+                                <span data-i18n="projects.view">VER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -267,7 +271,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://sanseesports.framer.website/" target="_blank" class="project-link">
-                                <span>VER</span>
+                                <span data-i18n="projects.view">VER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -289,7 +293,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://medium.com/@chema.ucm/hbo-onyx-la-nueva-forma-de-ver-hbo-max-en-todas-las-tvs-del-mundo-8588077cb28a" target="_blank" class="project-link">
-                                <span>LEER</span>
+                                <span data-i18n="projects.read">LEER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -311,7 +315,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://medium.com/@chema.ucm/stylishday-qu%C3%A9-me-pongo-con-el-tiempo-que-tengo-25f6e5afe123" target="_blank" class="project-link">
-                                <span>LEER</span>
+                                <span data-i18n="projects.read">LEER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -333,7 +337,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://medium.com/@chema.ucm/design-sprint-la-pel%C3%ADcula-fab255511b90" target="_blank" class="project-link">
-                                <span>LEER</span>
+                                <span data-i18n="projects.read">LEER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -355,7 +359,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://medium.com/@chema.ucm/pueden-las-personas-de-la-3%C2%AA-edad-tener-una-transici%C3%B3n-digital-antes-de-que-desaparezcan-las-abee96fc67d" target="_blank" class="project-link">
-                                <span>LEER</span>
+                                <span data-i18n="projects.read">LEER</span>
                                 <span class="link-arrow">→</span>
                             </a>
                         </div>
@@ -367,7 +371,7 @@
         <section id="skills" class="skills-section">
             <div class="section-header">
                 <span class="section-number">03</span>
-                <h2 class="section-title">SKILLS</h2>
+                <h2 class="section-title" data-i18n="skills.title">SKILLS</h2>
                 <div class="section-line"></div>
             </div>
             <div class="skills-content">
@@ -375,7 +379,7 @@
                     <div class="skill-category">
                         <h3 class="skill-title">
                             <span class="skill-icon">💻</span>
-                            DESARROLLO
+                            <span data-i18n="skills.dev">DESARROLLO</span>
                         </h3>
                         <div class="skill-bars">
                             <div class="skill-bar" data-skill="95">
@@ -439,7 +443,7 @@
                     <div class="skill-category">
                         <h3 class="skill-title">
                             <span class="skill-icon">🎨</span>
-                            DISEÑO & UX/UI
+                            <span data-i18n="skills.design">DISEÑO & UX/UI</span>
                         </h3>
                         <div class="skill-bars">
                             <div class="skill-bar" data-skill="95">
@@ -489,7 +493,7 @@
                     <div class="skill-category">
                         <h3 class="skill-title">
                             <span class="skill-icon">🛠️</span>
-                            HERRAMIENTAS
+                            <span data-i18n="skills.tools">HERRAMIENTAS</span>
                         </h3>
                         <div class="tools-grid">
                             <div class="tool-item">
@@ -537,16 +541,16 @@
         <section id="contact" class="contact-section">
             <div class="section-header">
                 <span class="section-number">04</span>
-                <h2 class="section-title">CONTACTO</h2>
+                <h2 class="section-title" data-i18n="contact.title">CONTACTO</h2>
                 <div class="section-line"></div>
             </div>
             <div class="contact-content">
                 <div class="contact-card">
                     <div class="contact-header">
                         <span class="contact-icon">📡</span>
-                        <h3>CONECTAR</h3>
+                        <h3 data-i18n="contact.connect">CONECTAR</h3>
                     </div>
-                    <p class="contact-desc">¿Listo para una aventura conjunta? ¡Escríbeme!</p>
+                    <p class="contact-desc" data-i18n="contact.desc">¿Listo para una aventura conjunta? ¡Escríbeme!</p>
                     <div class="contact-links">
                         <a href="https://github.com/Chemitronki" target="_blank" class="contact-link">
                             <span class="link-icon">🐙</span>
@@ -559,23 +563,23 @@
                     </div>
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">NOMBRE</label>
+                            <label for="name" data-i18n="contact.name">NOMBRE</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">EMAIL</label>
+                            <label for="email" data-i18n="contact.email">EMAIL</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">MENSAJE</label>
+                            <label for="message" data-i18n="contact.message">MENSAJE</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">ENVIAR</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.send">ENVIAR</button>
                     </form>
                 </div>
                 <div class="contact-credits">
                     <p>© 2026 Chema García</p>
-                    <p>Diseñado con ❤️ y ☕</p>
+                    <p data-i18n="contact.made">Diseñado con ❤️ y ☕</p>
                 </div>
             </div>
         </section>
@@ -589,13 +593,13 @@
         </button>
         <div class="menu-overlay" id="menu-overlay"></div>
         <div class="menu-panel" id="menu-panel">
-            <div class="menu-header">MENÚ</div>
+            <div class="menu-header" data-i18n="menu.title">MENÚ</div>
             <ul class="menu-items">
-                <li><a href="#home">INICIO</a></li>
-                <li><a href="#about">SOBRE MÍ</a></li>
-                <li><a href="#projects">MISIONES</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#contact">CONTACTO</a></li>
+                <li><a href="#home" data-i18n="nav.home">INICIO</a></li>
+                <li><a href="#about" data-i18n="nav.about">SOBRE MÍ</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">MISIONES</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">CONTACTO</a></li>
             </ul>
         </div>
     </div>

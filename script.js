@@ -6,7 +6,221 @@ document.addEventListener('DOMContentLoaded', () => {
     initGameMenu();
     initContactForm();
     initSkillsAnimation();
+    initLanguageToggle();
+    loadLanguage();
 });
+
+const translations = {
+    en: {
+        'nav.home': 'HOME',
+        'nav.about': 'ABOUT',
+        'nav.projects': 'MISSIONS',
+        'nav.skills': 'SKILLS',
+        'nav.contact': 'CONTACT',
+        'hero.tag1': 'WEB DEVELOPER',
+        'hero.tag2': 'UX/UI DESIGNER',
+        'hero.tag3': 'FULL STACK',
+        'hero.age': 'YEARS',
+        'hero.projects': 'PROJECTS',
+        'hero.title': 'DEGREE',
+        'hero.missions': 'VIEW MISSIONS',
+        'hero.contact': 'CONTACT',
+        'hero.scroll': 'SCROLL',
+        'about.title': 'ABOUT ME',
+        'about.character': 'CHARACTER',
+        'about.p1': 'Hi! I\'m <strong>Jose Manuel García Seno</strong>, known as <span class="highlight">Chema</span>. I\'m a web developer and UX/UI designer with a gamer soul.',
+        'about.p2': 'I currently work as a web developer at <strong>Gesyfar</strong>, managing e-commerce projects with PrestaShop, PHP and MySQL. I was previously UX/UI Designer at <strong>Wiper Gaming</strong> and have training in web development and interface design.',
+        'about.p3': 'My passion for video games is reflected in everything I create: immersive interfaces, smooth animations, and experiences that seem taken from a game.',
+        'about.class': 'CLASS',
+        'about.specialty': 'SPECIALTY',
+        'about.inventory': 'INVENTORY',
+        'about.location': 'Madrid, Spain',
+        'about.job': 'Web Developer at Gesyfar',
+        'about.education': 'FP DAW - IES Vista Alegre',
+        'about.hobby': 'Gamer & Game Dev',
+        'about.degree': 'Audiovisual Communication Degree',
+        'projects.title': 'MY MISSIONS',
+        'projects.featured': 'FEATURED',
+        'projects.play': 'PLAY',
+        'projects.code': 'CODE',
+        'projects.view': 'VIEW',
+        'projects.read': 'READ',
+        'skills.title': 'SKILLS',
+        'skills.dev': 'DEVELOPMENT',
+        'skills.design': 'DESIGN & UX/UI',
+        'skills.tools': 'TOOLS',
+        'contact.title': 'CONTACT',
+        'contact.connect': 'CONNECT',
+        'contact.desc': 'Ready for an adventure together? Write to me!',
+        'contact.name': 'NAME',
+        'contact.email': 'EMAIL',
+        'contact.message': 'MESSAGE',
+        'contact.send': 'SEND',
+        'contact.made': 'Made with ❤️ and ☕',
+        'menu.title': 'MENU'
+    },
+    es: {
+        'nav.home': 'INICIO',
+        'nav.about': 'SOBRE MÍ',
+        'nav.projects': 'MISIONES',
+        'nav.skills': 'SKILLS',
+        'nav.contact': 'CONTACTO',
+        'hero.tag1': 'DESARROLLADOR WEB',
+        'hero.tag2': 'UX/UI DESIGNER',
+        'hero.tag3': 'FULL STACK',
+        'hero.age': 'AÑOS',
+        'hero.projects': 'PROYECTOS',
+        'hero.title': 'TÍTULO',
+        'hero.missions': 'VER MISIONES',
+        'hero.contact': 'CONTACTAR',
+        'hero.scroll': 'SCROLL',
+        'about.title': 'SOBRE MÍ',
+        'about.character': 'PERSONAJE',
+        'about.p1': '¡Hola! Soy <strong>Jose Manuel García Seno</strong>, conocido como <span class="highlight">Chema</span>. Soy desarrollador web y diseñador UX/UI con alma de gamer.',
+        'about.p2': 'Actualmente trabajo como desarrollador web en <strong>Gesyfar</strong>, gestionando proyectos e-commerce con PrestaShop, PHP y MySQL. Antes fui UX/UI Designer en <strong>Wiper Gaming</strong> y cuento con formación en desarrollo web y diseño de interfaces.',
+        'about.p3': 'Mi pasión por los videojuegos se refleja en todo lo que creo: interfaces inmersivas, animaciones fluidas y experiencias que parecen sacadas de un juego.',
+        'about.class': 'CLASE',
+        'about.specialty': 'ESPECIALIDAD',
+        'about.inventory': 'INVENTARIO',
+        'about.location': 'Madrid, España',
+        'about.job': 'Desarrollador Web en Gesyfar',
+        'about.education': 'FP DAW - IES Vista Alegre',
+        'about.hobby': 'Gamer & Game Dev',
+        'about.degree': 'Grado Comunicación Audiovisual',
+        'projects.title': 'MIS MISIONES',
+        'projects.featured': 'DESTACADO',
+        'projects.play': 'JUGAR',
+        'projects.code': 'CÓDIGO',
+        'projects.view': 'VER',
+        'projects.read': 'LEER',
+        'skills.title': 'SKILLS',
+        'skills.dev': 'DESARROLLO',
+        'skills.design': 'DISEÑO & UX/UI',
+        'skills.tools': 'HERRAMIENTAS',
+        'contact.title': 'CONTACTO',
+        'contact.connect': 'CONECTAR',
+        'contact.desc': '¿Listo para una aventura conjunta? ¡Escríbeme!',
+        'contact.name': 'NOMBRE',
+        'contact.email': 'EMAIL',
+        'contact.message': 'MENSAJE',
+        'contact.send': 'ENVIAR',
+        'contact.made': 'Diseñado con ❤️ y ☕',
+        'menu.title': 'MENÚ'
+    }
+};
+
+let currentLang = 'es';
+
+function initLanguageToggle() {
+    const langToggle = document.getElementById('lang-toggle');
+    if (!langToggle) return;
+    
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        applyTranslations(currentLang);
+        saveLanguage(currentLang);
+        updateLangButton();
+    });
+}
+
+function applyTranslations(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translations[lang][key];
+            } else {
+                el.innerHTML = translations[lang][key];
+            }
+        }
+    });
+    
+    const titles = {
+        en: 'Chema García | Web Developer & UX/UI Designer',
+        es: 'Chema García | Desarrollador Web & Diseñador UX/UI'
+    };
+    document.title = titles[lang];
+    
+    const descs = {
+        en: 'Portfolio of Chema García - Web Developer (DAW), UX/UI Designer. Projects: Lovecraftian Escape Room, Web Apps.',
+        es: 'Portfolio de Chema García - Desarrollador Web (DAW), UX/UI Designer. Proyectos: Lovecraftian Escape Room, Web Apps.'
+    };
+    document.querySelector('meta[name="description"]').content = descs[lang];
+    
+    document.querySelectorAll('.project-card').forEach(card => {
+        const titleEl = card.querySelector('.project-title');
+        const descEl = card.querySelector('.project-desc');
+        if (titleEl) {
+            const projectKey = titleEl.textContent.toLowerCase().replace(/\s+/g, '');
+            translateProject(card, lang, projectKey);
+        }
+    });
+}
+
+function translateProject(card, lang, projectKey) {
+    const projectTranslations = {
+        en: {
+            'lovecraftianescaperoom': { title: 'LOVECRAFTIAN ESCAPE ROOM', desc: 'Web escape room experience with Lovecraftian theme. 10 unique puzzles, 25 min timer, hint system and global ranking.' },
+            'mitologíanórdica': { title: 'NORDIC MYTHOLOGY', desc: 'Interactive web about Norse mythology with information about gods, creatures and ancient texts.' },
+            'physiocaremadrid': { title: 'PHYSIO CARE MADRID', desc: 'UX/UI design for physiotherapy and osteopathy website in Madrid. Accessible and user-centered design.' },
+            'spainleague2k': { title: 'SPAIN LEAGUE 2K', desc: '2K video game league website. Online competitions for NBA 2K, FIFA and more.' },
+            'sanseesports': { title: 'SANSE ESPORTS', desc: 'Esports and gaming club. Tournaments, teams and gaming community.' },
+            'hboonyx': { title: 'HBO ONYX', desc: 'Case study about HBO Max and its expansion to all TV devices. UX Analysis.' },
+            'stylishday': { title: 'STYLISH DAY', desc: 'Outfit recommendation app based on weather conditions. UX Design.' },
+            'designsprint:lapelícula': { title: 'DESIGN SPRINT: THE MOVIE', desc: 'Design Sprint methodology applied to film production. UX Research.' },
+            'transicióndigital3ªedad': { title: 'DIGITAL TRANSITION FOR SENIORS', desc: 'Research on how to facilitate digital transition for elderly people.' }
+        },
+        es: {
+            'lovecraftianescaperoom': { title: 'LOVECRAFTIAN ESCAPE ROOM', desc: 'Experiencia de escape room web con temática lovecraftiana. 10 puzzles únicos, timer de 25 min, sistema de pistas y ranking global.' },
+            'mitologíanórdica': { title: 'MITOLOGÍA NÓRDICA', desc: 'Web interactiva sobre mitología nórdica con información de dioses, criaturas y textos ancestrales.' },
+            'physiocaremadrid': { title: 'PHYSIO CARE MADRID', desc: 'Diseño UX/UI para web de fisioterapia y osteopatía en Madrid. Diseño accesible y centrado en el usuario.' },
+            'spainleague2k': { title: 'SPAIN LEAGUE 2K', desc: 'Web de liga de videojuegos 2K. Competiciones online de NBA 2K, FIFA y más.' },
+            'sanseesports': { title: 'SANSE ESPORTS', desc: 'Club de esports y gaming. Torneos, equipos y comunidad gamer.' },
+            'hboonyx': { title: 'HBO ONYX', desc: 'Case study sobre HBO Max y su expansión a todos los dispositivos TV. Análisis UX.' },
+            'stylishday': { title: 'STYLISH DAY', desc: 'App de recomendaciones de outfit según el clima meteorológico. UX Design.' },
+            'designsprint:lapelícula': { title: 'DESIGN SPRINT: LA PELÍCULA', desc: 'Metodología Design Sprint aplicada a la producción cinematográfica. UX Research.' },
+            'transicióndigital3ªedad': { title: 'TRANSICIÓN DIGITAL 3ª EDAD', desc: 'Investigación sobre cómo facilitar la transición digital a las personas mayores.' }
+        }
+    };
+    
+    const titleEl = card.querySelector('.project-title');
+    const descEl = card.querySelector('.project-desc');
+    
+    if (projectTranslations[lang] && projectTranslations[lang][projectKey]) {
+        if (titleEl) titleEl.textContent = projectTranslations[lang][projectKey].title;
+        if (descEl) descEl.textContent = projectTranslations[lang][projectKey].desc;
+    }
+}
+
+function saveLanguage(lang) {
+    localStorage.setItem('portfolio-lang', lang);
+}
+
+function loadLanguage() {
+    const savedLang = localStorage.getItem('portfolio-lang');
+    if (savedLang && (savedLang === 'en' || savedLang === 'es')) {
+        currentLang = savedLang;
+        applyTranslations(currentLang);
+    }
+    updateLangButton();
+}
+
+function updateLangButton() {
+    const langToggle = document.getElementById('lang-toggle');
+    if (!langToggle) return;
+    
+    const flagEl = langToggle.querySelector('.lang-flag');
+    const textEl = langToggle.querySelector('.lang-text');
+    
+    if (currentLang === 'en') {
+        flagEl.textContent = '🇬🇧';
+        textEl.textContent = 'EN';
+    } else {
+        flagEl.textContent = '🇪🇸';
+        textEl.textContent = 'ES';
+    }
+}
 
 function initMatrixEffect() {
     const canvas = document.getElementById('matrix-canvas');
