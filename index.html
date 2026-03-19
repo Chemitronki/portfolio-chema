@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chema García | Desarrollador Web & Diseñador UX/UI</title>
+    <meta name="description" content="Portfolio de Chema García - Desarrollador Web (DAW), UX/UI Designer. Proyectos: Lovecraftian Escape Room, Web Apps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="crt-overlay"></div>
+    
+    <nav class="game-nav">
+        <div class="nav-logo">
+            <span class="logo-text" data-text="CHEMA">CHEMA</span>
+            <span class="level-badge">LVL 34</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active" data-i18n="nav.home">INICIO</a></li>
+            <li><a href="#about" class="nav-link" data-i18n="nav.about">SOBRE MÍ</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav.projects">MISIONES</a></li>
+            <li><a href="#skills" class="nav-link" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACTO</a></li>
+        </ul>
+        <div class="nav-hp">
+            <span class="hp-label">HP</span>
+            <div class="hp-bar">
+                <div class="hp-fill"></div>
+            </div>
+        </div>
+        <button class="lang-toggle" id="lang-toggle">
+            <span class="lang-flag">🇬🇧</span>
+            <span class="lang-text">EN</span>
+        </button>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-bg">
+                <canvas id="matrix-canvas"></canvas>
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-avatar">
+                    <div class="avatar-frame">
+                        <div class="avatar-inner">
+                            <div class="avatar-placeholder">CG</div>
+                        </div>
+                    </div>
+                    <div class="status-indicator online"></div>
+                </div>
+                <h1 class="hero-title glitch" data-text="CHEMA GARCÍA">CHEMA GARCÍA</h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span><span class="cursor">|</span>
+                </div>
+                <div class="hero-tags">
+                    <span class="tag" data-i18n="hero.tag1">DESARROLLADOR WEB</span>
+                    <span class="tag" data-i18n="hero.tag2">UX/UI DESIGNER</span>
+                    <span class="tag" data-i18n="hero.tag3">FULL STACK</span>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">34</span>
+                        <span class="stat-label" data-i18n="hero.age">AÑOS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label" data-i18n="hero.projects">PROYECTOS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">DAW</span>
+                        <span class="stat-label" data-i18n="hero.title">TÍTULO</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.missions">VER MISIONES</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">CONTACTAR</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span data-i18n="hero.scroll">SCROLL</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title" data-i18n="about.title">SOBRE MÍ</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-card character-card">
+                    <div class="card-header">
+                        <span class="card-icon">⚔️</span>
+                        <h3 data-i18n="about.character">PERSONAJE</h3>
+                    </div>
+                    <div class="card-body">
+                        <p data-i18n="about.p1">¡Hola! Soy <strong>Jose Manuel García Seno</strong>, conocido como <span class="highlight">Chema</span>. Soy desarrollador web y diseñador UX/UI con alma de gamer.</p>
+                        <p data-i18n="about.p2">Actualmente trabajo como desarrollador web en <strong>Gesyfar</strong>, gestionando proyectos e-commerce con PrestaShop, PHP y MySQL. Antes fui UX/UI Designer en <strong>Wiper Gaming</strong> y cuento con formación en desarrollo web y diseño de interfaces.</p>
+                        <p data-i18n="about.p3">Mi pasión por los videojuegos se refleja en todo lo que creo: interfaces inmersivas, animaciones fluidas y experiencias que parecen sacadas de un juego.</p>
+                    </div>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-stat-label" data-i18n="about.class">CLASE</span>
+                            <span class="mini-stat-value">DEV/UI</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-label" data-i18n="about.specialty">ESPECIALIDAD</span>
+                            <span class="mini-stat-value">FULL STACK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-card inventory-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎒</span>
+                        <h3 data-i18n="about.inventory">INVENTARIO</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="inventory-list">
+                            <li>
+                                <span class="item-icon">📍</span>
+                                <span data-i18n="about.location">Madrid, España</span>
+                            </li>
+                            <li>
+                                <span class="item-icon">💼</span>
+                                <span data-i18n="about.job">Desarrollador Web en Gesyfar</span>
+                            </li>
+                            <li>
+                                <span class="item-icon">🎓</span>
+                                <span data-i18n="about.education">FP DAW - IES Vista Alegre</span>
+                            </li>
+                            <li>
+                                <span class="item-icon">🎮</span>
+                                <span data-i18n="about.hobby">Gamer & Game Dev</span>
+                            </li>
+                            <li>
+                                <span class="item-icon">📺</span>
+                                <span data-i18n="about.degree">Grado Comunicación Audiovisual</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-i18n="projects.title">MIS MISIONES</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card featured" data-project="lovecraftian">
+                    <div class="project-badge" data-i18n="projects.featured">DESTACADO</div>
+                    <div class="project-visual">
+                        <div class="project-preview lovecraftian-preview">
+                            <div class="tentacle t1"></div>
+                            <div class="tentacle t2"></div>
+                            <div class="rune">⟁</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">LOVECRAFTIAN ESCAPE ROOM</h3>
+                        <p class="project-desc">Experiencia de escape room web con temática lovecraftiana. 10 puzzles únicos, timer de 25 min, sistema de pistas y ranking global.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://lovecraftianescaperoom.vercel.app" target="_blank" class="project-link">
+                                <span data-i18n="projects.play">JUGAR</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Chemitronki/Lovecraftian-Escape-Room" target="_blank" class="project-link">
+                                <span data-i18n="projects.code">CÓDIGO</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="ai-native">
+                    <div class="project-visual">
+                        <div class="project-preview ai-native-preview">
+                            <div class="ai-icon">🤖</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI-NATIVE DEV FRAMEWORK</h3>
+                        <p class="project-desc">Monorepo TypeScript con CLI para análisis de código con IA. 5 comandos: analyze, suggest, refactor, fix-bugs y generate-feature.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">OpenAI API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chemitronki/AI-Native_Dev_Framework" target="_blank" class="project-link">
+                                <span data-i18n="projects.code">CÓDIGO</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="superherolife">
+                    <div class="project-visual">
+                        <div class="project-preview superherolife-preview">
+                            <div class="hero-icon">⚡</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SUPERHERO LIFE</h3>
+                        <p class="project-desc">Programa de entrenamiento de héroes gamificado estilo cómic. Misiones con quizzes, XP, niveles, rangos y logros.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://super-hero-life.vercel.app" target="_blank" class="project-link">
+                                <span data-i18n="projects.play">JUGAR</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Chemitronki/SuperHeroLife" target="_blank" class="project-link">
+                                <span data-i18n="projects.code">CÓDIGO</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="nordic">
+                    <div class="project-visual">
+                        <div class="project-preview nordic-preview">
+                            <div class="rune-item r1">ᚠ</div>
+                            <div class="rune-item r2">ᚢ</div>
+                            <div class="rune-item r3">ᚦ</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">MITOLOGÍA NÓRDICA</h3>
+                        <p class="project-desc">Web interactiva sobre mitología nórdica con información de dioses, criaturas y textos ancestrales.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mitologia-nordica-delta.vercel.app/" target="_blank" class="project-link">
+                                <span data-i18n="projects.view">VER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="physiocare">
+                    <div class="project-visual">
+                        <div class="project-preview physiocare-preview">
+                            <div class="cross">✚</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">PHYSIO CARE MADRID</h3>
+                        <p class="project-desc">Diseño UX/UI para web de fisioterapia y osteopatía en Madrid. Diseño accesible y centrado en el usuario.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UX/UI</span>
+                            <span class="tech-tag">Web Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.physiocaremadrid.com/" target="_blank" class="project-link">
+                                <span data-i18n="projects.view">VER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="spainleague">
+                    <div class="project-visual">
+                        <div class="project-preview spainleague-preview">
+                            <div class="trophy">🏆</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SPAIN LEAGUE 2K</h3>
+                        <p class="project-desc">Web de liga de videojuegos 2K. Competiciones online de NBA 2K, FIFA y más.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Framer</span>
+                            <span class="tech-tag">Web Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://spainleague2k.framer.website/" target="_blank" class="project-link">
+                                <span data-i18n="projects.view">VER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="sanseesports">
+                    <div class="project-visual">
+                        <div class="project-preview sanseesports-preview">
+                            <div class="esports-icon">🎮</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SANSE ESPORTS</h3>
+                        <p class="project-desc">Club de esports y gaming. Torneos, equipos y comunidad gamer.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Framer</span>
+                            <span class="tech-tag">Web Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://sanseesports.framer.website/" target="_blank" class="project-link">
+                                <span data-i18n="projects.view">VER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="hboonyx">
+                    <div class="project-visual">
+                        <div class="project-preview hboonyx-preview">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">HBO ONYX</h3>
+                        <p class="project-desc">Case study sobre HBO Max y su expansión a todos los dispositivos TV. Análisis UX.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Medium</span>
+                            <span class="tech-tag">UX Case Study</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@chema.ucm/hbo-onyx-la-nueva-forma-de-ver-hbo-max-en-todas-las-tvs-del-mundo-8588077cb28a" target="_blank" class="project-link">
+                                <span data-i18n="projects.read">LEER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="stylishday">
+                    <div class="project-visual">
+                        <div class="project-preview stylishday-preview">
+                            <div class="clothes-icon">👕</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">STYLISH DAY</h3>
+                        <p class="project-desc">App de recomendaciones de outfit según el clima meteorológico. UX Design.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Medium</span>
+                            <span class="tech-tag">UX Case Study</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@chema.ucm/stylishday-qu%C3%A9-me-pongo-con-el-tiempo-que-tengo-25f6e5afe123" target="_blank" class="project-link">
+                                <span data-i18n="projects.read">LEER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="designsprint">
+                    <div class="project-visual">
+                        <div class="project-preview designsprint-preview">
+                            <div class="film-icon">🎬</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">DESIGN SPRINT: LA PELÍCULA</h3>
+                        <p class="project-desc">Metodología Design Sprint aplicada a la producción cinematográfica. UX Research.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Medium</span>
+                            <span class="tech-tag">UX Research</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@chema.ucm/design-sprint-la-pel%C3%ADcula-fab255511b90" target="_blank" class="project-link">
+                                <span data-i18n="projects.read">LEER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="seniors">
+                    <div class="project-visual">
+                        <div class="project-preview seniors-preview">
+                            <div class="elder-icon">👴</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TRANSICIÓN DIGITAL 3ª EDAD</h3>
+                        <p class="project-desc">Investigación sobre cómo facilitar la transición digital a las personas mayores.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Medium</span>
+                            <span class="tech-tag">UX Research</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@chema.ucm/pueden-las-personas-de-la-3%C2%AA-edad-tener-una-transici%C3%B3n-digital-antes-de-que-desaparezcan-las-abee96fc67d" target="_blank" class="project-link">
+                                <span data-i18n="projects.read">LEER</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title" data-i18n="skills.title">SKILLS</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">💻</span>
+                            <span data-i18n="skills.dev">DESARROLLO</span>
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="95">
+                                <span class="skill-name">HTML5/CSS3</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="90">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="80">
+                                <span class="skill-name">PHP</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="75">
+                                <span class="skill-name">PrestaShop</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="70">
+                                <span class="skill-name">React</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="65">
+                                <span class="skill-name">Python</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="70">
+                                <span class="skill-name">MySQL</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="60">
+                                <span class="skill-name">WordPress</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">🎨</span>
+                            <span data-i18n="skills.design">DISEÑO & UX/UI</span>
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="95">
+                                <span class="skill-name">Figma</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="90">
+                                <span class="skill-name">UX/UI Design</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="85">
+                                <span class="skill-name">Framer</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="80">
+                                <span class="skill-name">Webflow</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="75">
+                                <span class="skill-name">Adobe XD</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar" data-skill="70">
+                                <span class="skill-name">Photoshop</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">🛠️</span>
+                            <span data-i18n="skills.tools">HERRAMIENTAS</span>
+                        </h3>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <div class="tool-logo github-logo">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </div>
+                                <span class="tool-name">Git/GitHub</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo npm-logo">
+                                    <svg viewBox="0 0 24 24" fill="#CB3837"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.331h-2.669v-.001zm12 0v1.336h-2.667V8.667h2.667v5.331z"/></svg>
+                                </div>
+                                <span class="tool-name">npm</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo firebase-logo">
+                                    <svg viewBox="0 0 24 24" fill="#FFCA28"><path d="M3.89 17.09l1.94-3.43 2.06 3.43-2.06-1.2-1.94 1.2zm11.64-6.65l-2.06-3.43-1.94 3.43 1.94-1.2 2.06 1.2zm1.54-3.2l-2.4 1.2 2.4 4.2 2.4-4.2-2.4-1.2zm-7.36 3.2l-1.94-1.2-1.94 1.2 1.94 1.2 1.94-1.2zM21.78 9.64L14.44 3.3l-7.34 6.34-4.1-2.3v2.66l4.1-2.3 7.34 6.34 7.34-6.34 4.1 2.3v-2.66l-4.1 2.3z"/></svg>
+                                </div>
+                                <span class="tool-name">Firebase</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo supabase-logo">
+                                    <svg viewBox="0 0 24 24" fill="#3ECF8E"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <span class="tool-name">Supabase</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo vercel-logo">
+                                    <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 1L2 12h3v9h6v-6h2v6h6V12h3L12 1z"/></svg>
+                                </div>
+                                <span class="tool-name">Vercel</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo vscode-logo">
+                                    <svg viewBox="0 0 24 24" fill="#007ACC"><path d="M23.542 9.435a2.242 2.242 0 00-.357-1.468l-4.792-4.792a2.242 2.242 0 00-1.468-.357L9.504 2.82 1.912 10.41a2.242 2.242 0 00-.357 1.468l4.792 4.792a2.242 2.242 0 001.468.357l7.421-.001 7.579 7.578a2.241 2.241 0 001.468.357 2.242 2.242 0 001.468-.357l4.792-4.792a2.242 2.242 0 00.357-1.468L23.542 9.435zM3.824 11.588L10.412 5l4.793 4.792-6.588 6.588-4.793-4.792z"/></svg>
+                                </div>
+                                <span class="tool-name">VS Code</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo mysql-logo">
+                                    <svg viewBox="0 0 24 24" fill="#00758F"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 18.6c-3.636 0-6.6-2.964-6.6-6.6S8.364 5.4 12 5.4s6.6 2.964 6.6 6.6-2.964 6.6-6.6 6.6z"/><path d="M12 7.2c-2.64 0-4.8 2.16-4.8 4.8s2.16 4.8 4.8 4.8 4.8-2.16 4.8-4.8-2.16-4.8-4.8-4.8z"/></svg>
+                                </div>
+                                <span class="tool-name">MySQL</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo xampp-logo">
+                                    <svg viewBox="0 0 24 24" fill="#fb7b2e"><circle cx="12" cy="12" r="10" fill="#fb7b2e"/><circle cx="12" cy="12" r="6" fill="#fff"/></svg>
+                                </div>
+                                <span class="tool-name">XAMPP</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-logo elementor-logo">
+                                    <svg viewBox="0 0 24 24" fill="#920032"><path d="M12 0L2 6v12l10 6 10-6V6L12 0zm0 2.4l6 3.6v7.2l-6 3.6-6-3.6V6l6-3.6z"/></svg>
+                                </div>
+                                <span class="tool-name">Elementor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title" data-i18n="contact.title">CONTACTO</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <span class="contact-icon">📡</span>
+                        <h3 data-i18n="contact.connect">CONECTAR</h3>
+                    </div>
+                    <p class="contact-desc" data-i18n="contact.desc">¿Listo para una aventura conjunta? ¡Escríbeme!</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/Chemitronki" target="_blank" class="contact-link">
+                            <div class="contact-logo github-logo">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </div>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:chema.ucm@gmail.com" class="contact-link">
+                            <span class="link-icon">📧</span>
+                            <span>chema.ucm@gmail.com</span>
+                        </a>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.name">NOMBRE</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.email">EMAIL</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.message">MENSAJE</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.send">ENVIAR</button>
+                    </form>
+                </div>
+                <div class="contact-credits">
+                    <p>© 2026 Chema García</p>
+                    <p data-i18n="contact.made">Diseñado con ❤️ y ☕</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="game-menu">
+        <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu-panel" id="menu-panel">
+            <div class="menu-header" data-i18n="menu.title">MENÚ</div>
+            <ul class="menu-items">
+                <li><a href="#home" data-i18n="nav.home">INICIO</a></li>
+                <li><a href="#about" data-i18n="nav.about">SOBRE MÍ</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">MISIONES</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">CONTACTO</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
